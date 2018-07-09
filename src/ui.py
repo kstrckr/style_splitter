@@ -1,5 +1,11 @@
+import os
+
 class UI:
     ask_for_input = '\nPlease drag the file to be style-split into this window\nor enter X to exit:\n'
+    preview_header = '\ntarget file will generate the following files'
+    creation_confirmation_msg = '\nVerify correct naming and enter [Y/n] to continue '
+    process_repeat_msg = '\nContinue with another file? [Y/n]'
+    exit_msg = '\nExiting program.'
     arrow = '--> '
     force_quit = False
 
@@ -10,12 +16,12 @@ class UI:
             self.force_quit = True
 
     def print_preview(self, list_of_expected_names):
-        print('\ntarget file will generate the following files')
+        print(self.preview_header)
         for name in list_of_expected_names:
             print('--> {}'.format(name))
 
     def confirm_file_creation(self):
-        print('\nVerify correct naming and enter [Y/n] to continue ')
+        print(self.creation_confirmation_msg)
         confirmation = raw_input(self.arrow)
 
         if confirmation == 'Y'.lower() or confirmation == "":
@@ -23,11 +29,18 @@ class UI:
         else:
             return False
 
+    def exit_message(self):
+        print(self.exit_msg)
+
     def repeat(self):
-        print('\nContinue with another file? [Y/n]')
+        print(self.process_repeat_msg)
         confirmation = raw_input(self.arrow)
 
         if confirmation == "Y".lower() or not confirmation:
             return True
         else:
             return False
+
+    @classmethod
+    def cls(self):
+        os.system('cls' if os.name=='nt' else 'clear')
