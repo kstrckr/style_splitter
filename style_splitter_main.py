@@ -5,10 +5,10 @@ from src import ui
 
 if __name__ == '__main__':
 
-    repeat = True
+    repeating = True
 
-    while repeat:
-        ui.UI.cls()
+    while repeating:
+        ui.UI.clear_screen()
         current_ui = ui.UI()
         if current_ui.force_quit == True:
             current_ui.exit_message()
@@ -17,18 +17,18 @@ if __name__ == '__main__':
         sp = style_splitter.StyleSplitter(current_ui.target_file_path)
         sp.parse_names()
 
-        ui.UI.cls()
+        ui.UI.clear_screen()
         current_ui.print_preview(sp.get_names())
 
         if current_ui.confirm_file_creation() == True:
             sp.create_files()
-            ui.UI.cls()
+            ui.UI.clear_screen()
             sp.confirm_files()
 
             if current_ui.repeat():
-                repeat = True
+                repeating = True
             else:
-                repeat = False
+                repeating = False
                 current_ui.exit_message()
         else:
             pass

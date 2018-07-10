@@ -42,5 +42,5 @@ class UI:
             return False
 
     @classmethod
-    def cls(self):
+    def clear_screen(self):
         os.system('cls' if os.name=='nt' else 'clear')
