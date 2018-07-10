@@ -22,7 +22,7 @@ class StyleSplitter:
                 full_name = name + ".jpg"
             else:
                 full_name = name
-            self._names.append(full_name)
+            self._names.append(full_name.strip())
 
     def create_files(self):
         
@@ -42,7 +42,7 @@ class StyleSplitter:
             validated = os.path.isfile(validation_path)
             
             if validated:
-                print('{} - File Confirmed'.format(file))
+                print('{} - Created'.format(file))
             else:
                 print('Potential issue with {}'.format(file))
 

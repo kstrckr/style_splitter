@@ -37,7 +37,10 @@ class StyleSplitterDirectoryArgsTestCase(unittest.TestCase):
 
 suite1 = unittest.TestLoader().loadTestsFromTestCase(StyleSplitterTestCase)
 suite2 = unittest.TestLoader().loadTestsFromTestCase(StyleSplitterDirectoryArgsTestCase)
+
+print('\n**Testing Naming and Path Validity**')
 unittest.TextTestRunner(verbosity=2).run(suite1)
+print('\n**Testing StyleSplitter Class Instancing**')
 unittest.TextTestRunner(verbosity=2).run(suite2)
 
 

@@ -6,6 +6,7 @@ class UI:
     creation_confirmation_msg = '\nVerify correct naming and enter [Y/n] to continue '
     process_repeat_msg = '\nContinue with another file? [Y/n]'
     exit_msg = '\nExiting program.'
+    invalid_path_msg = 'is not a valid path to an image file, please try again'
     arrow = '--> '
     force_quit = False
 
@@ -44,3 +45,7 @@ class UI:
     @classmethod
     def clear_screen(self):
         os.system('cls' if os.name=='nt' else 'clear')
+
+    @classmethod
+    def path_error_message(self, invalid_path):
+        print('"{}" '.format(invalid_path) + self.invalid_path_msg)
