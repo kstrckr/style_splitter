@@ -12,7 +12,9 @@ class UI:
 
     def __init__(self):
         print(self.ask_for_input)
-        self.target_file_path = raw_input(self.arrow)
+        self.raw_target_file_path = raw_input(self.arrow)
+        self.target_file_path = self.raw_target_file_path.strip().strip("'")
+        print(self.target_file_path)
         if self.target_file_path == "X".lower():
             self.force_quit = True
 
