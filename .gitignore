@@ -1,6 +1,8 @@
 # Sample data directory and contents
 sample_data
 
+.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
