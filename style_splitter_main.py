@@ -2,8 +2,6 @@
 
 '''
 Style Splitter by Kurt Strecker
-502-468-7387
-kurtstrckr@gmail.com
 
 version a0.2 - updated 07/12 11am EST
 '''
